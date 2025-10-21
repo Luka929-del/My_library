@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reader Form</title>
+</head>
+<body>
+    <h1>Enter Your Information</h1>
+    <form method="POST">
+        {% csrf_token %}
+        First Name: <input type="text" name="first_name"><br>
+        Last Name: <input type="text" name="last_name"><br>
+        Age: <input type="number" name="age"><br>
+        Favorite Book:
+        <select name="favorite_book">
+            <option value="">-- None --</option>
+            {% for book in books %}
+                <option value="{{ book.id }}">{{ book.title }} by {{ book.author }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

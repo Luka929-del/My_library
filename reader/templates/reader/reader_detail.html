@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reader Info</title>
+</head>
+<body>
+    <h1>Reader Information</h1>
+    <p>Name: {{ reader.first_name }} {{ reader.last_name }}</p>
+    <p>Age: {{ reader.age }}</p>
+    {% if reader.favorite_book %}
+        <p>Favorite Book: {{ reader.favorite_book.title }} by {{ reader.favorite_book.author }}</p>
+    {% else %}
+        <p>No favorite book selected.</p>
+    {% endif %}
+</body>
+</html>
